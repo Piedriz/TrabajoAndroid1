@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">JuegoAndroid</string>
+    <string name="adivina_numero">ADIVINA EL NÚMERO</string>
+    <string name="jugar">JUGAR</string>
+    <string name="escoja_dificultad">DIFICULTAD</string>
+    <string name="numero_digitado">DIGITE UN NUMERO ENTRE O Y 100</string>
+    <string name="numero" />
+    <string name="namber" />
+    <string name="valid">VALIDAR</string>
+    <string name="ini">INICIAR</string>
+    <string name="difucultad">NÚMERO DE INTENTOS</string>
+    <string name="nnum">DIGITE UN NÚMERO</string>
+</resources>
