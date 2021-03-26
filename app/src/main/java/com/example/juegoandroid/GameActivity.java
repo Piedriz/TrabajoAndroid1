@@ -57,7 +57,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void calcular(int numerodeintentos,int numerodigitado, int numerogenerado){
-        if (numerodeintentos >= 0){
+        if (numerodeintentos > 0){
             if (numerodigitado == numerogenerado){
                 Toast.makeText(getApplicationContext(), "USTED ES GANADOR", Toast.LENGTH_SHORT).show();
                 number.setEnabled(false);
