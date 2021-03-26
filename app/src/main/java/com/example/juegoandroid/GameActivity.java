@@ -56,29 +56,38 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void calcular(int numerodeintentos,int numerodigitado, int numerogenerado){
-        if (numerodeintentos > 0){
-            if (numerodigitado == numerogenerado){
+    public void calcular(int numerointentos,int numerodigitado, int numerogenerado) {
+        if (numerointentos == 0) {
+            number.setEnabled(false);
+            check.setEnabled(false);
+            start.setEnabled(true);
+
+            if (numerodigitado == numerogenerado) {
+                Toast.makeText(getApplicationContext(), "USTED ES GANADOR", Toast.LENGTH_SHORT).show();
+
+            } else {
+                Toast.makeText(getApplicationContext(), "USTED ES PERDEDOR", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "EL NUMERO ES: "+xxx, Toast.LENGTH_SHORT).show();
+
+
+            }
+
+        } else if (numerointentos > 0) {
+            if (numerodigitado == numerogenerado) {
                 Toast.makeText(getApplicationContext(), "USTED ES GANADOR", Toast.LENGTH_SHORT).show();
                 number.setEnabled(false);
                 check.setEnabled(false);
                 start.setEnabled(true);
-            }else{
-                if (numerodigitado < numerogenerado){
+            } else {
+                if (numerodigitado < numerogenerado) {
                     Toast.makeText(getApplicationContext(), "SU NUMERO ES MENOR", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     Toast.makeText(getApplicationContext(), "SU NUMERO ES MAYOR", Toast.LENGTH_SHORT).show();
                 }
             }
-        }else{
-            Toast.makeText(getApplicationContext(), "USTED ES PERDEDOR", Toast.LENGTH_SHORT).show();
-            Toast.makeText(getApplicationContext(), "NUMERO: "+xxx, Toast.LENGTH_SHORT).show();
-            number.setEnabled(false);
-            check.setEnabled(false);
-            start.setEnabled(true);
         }
-
     }
+
     //Valida si la entrada es un int
     private static boolean isNumeric(String cadena){
         try {
@@ -100,8 +109,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 if (!numelegido.isEmpty() && isNumeric(numelegido) ) {
                     int numselec = Integer.parseInt(numelegido);
                     if (numselec <= 100 && numselec>=0) {
-                        numattemps = numattemps-1;
-                        calcular(numattemps, numselec, numaleatorio);
+                        numattemps=numattemps-1;
+                        calcular(numattemps,numselec,numaleatorio);
+
                     }else{
                         Toast.makeText(getApplicationContext(), "Solo numeros entre 0 y 100", Toast.LENGTH_LONG).show();
                     }
